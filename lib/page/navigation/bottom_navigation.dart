@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tov_na/core/constant/constants.dart';
 import 'package:tov_na/core/widget/widget.dart';
 
-import '../../base/state_management/navigation/naviation.dart';
-
-final selectedIndexProvider = StateProvider<int>((ref) => 0);
+import '../../base/state_management/naviation.dart';
 
 class NavRoot extends ConsumerStatefulWidget {
   const NavRoot({super.key});

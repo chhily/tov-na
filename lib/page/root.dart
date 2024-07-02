@@ -10,6 +10,7 @@ class TovNaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: DefaultTheme.instance.theme,
       home: const NavRoot(),
     );

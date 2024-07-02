@@ -5,3 +5,4 @@ export 'app_space.dart';
 export 'app_text.dart';
 export 'connection_alert.dart';
 export 'empty.dart';
+export 'avatar.dart';

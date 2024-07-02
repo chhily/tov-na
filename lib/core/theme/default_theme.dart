@@ -20,6 +20,11 @@ class DefaultTheme {
           backgroundColor: AppColors.bgColor,
           surfaceTintColor: AppColors.primary,
         ),
+        chipTheme: const ChipThemeData(
+          iconTheme: IconThemeData(
+            size: 12,
+          ),
+        ),
         dialogTheme: DialogTheme(
           backgroundColor: AppColors.bgColor,
           titleTextStyle: GoogleFonts.notoSansKhmer(
@@ -146,6 +151,7 @@ class DefaultTheme {
           fontSize: FontSize.body,
           color: AppColors.primaryText,
         ),
+        padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       ),
     );

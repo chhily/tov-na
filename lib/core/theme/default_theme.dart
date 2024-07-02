@@ -37,6 +37,30 @@ class DefaultTheme {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
         ),
+        navigationBarTheme: NavigationBarThemeData(
+          height: 60,
+          surfaceTintColor: AppColors.bg2Color,
+          elevation: 2,
+          backgroundColor: AppColors.bg2Color,
+          indicatorColor: AppColors.primary,
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+          labelTextStyle: MaterialStateProperty.all(
+            appText.copyWith(fontSize: FontSize.caption),
+          ),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: AppColors.white,
+            type: BottomNavigationBarType.shifting,
+            elevation: 0,
+            selectedIconTheme: const IconThemeData(
+              color: AppColors.primary,
+            ),
+            unselectedIconTheme: const IconThemeData(
+              color: AppColors.secondary,
+            ),
+            selectedLabelStyle: appText,
+            showSelectedLabels: true,
+            unselectedLabelStyle: appText.copyWith(color: AppColors.subtitle)),
         elevatedButtonTheme: elevatedButtonTheme,
         outlinedButtonTheme: outlineButtonTheme,
         textButtonTheme: textButtonTheme,
@@ -74,8 +98,8 @@ class DefaultTheme {
   AppBarTheme get appBarTheme {
     return AppBarTheme(
       color: AppColors.bgColor,
-      iconTheme: const IconThemeData(color: AppColors.secondary),
-      actionsIconTheme: const IconThemeData(color: AppColors.secondary),
+      iconTheme: const IconThemeData(color: AppColors.primary),
+      actionsIconTheme: const IconThemeData(color: AppColors.primary),
       titleTextStyle: GoogleFonts.notoSansKhmer(
         fontSize: FontSize.title,
         color: AppColors.primaryText,
@@ -129,14 +153,14 @@ class DefaultTheme {
 
   IconThemeData get iconTheme {
     return const IconThemeData(
-      color: AppColors.subtitle,
+      color: AppColors.primary,
     );
   }
 
   IconButtonThemeData get iconButtonTheme {
     return IconButtonThemeData(
       style: ButtonStyle(
-        iconColor: MaterialStateProperty.all(AppColors.white),
+        iconColor: MaterialStateProperty.all(AppColors.primary),
       ),
     );
   }

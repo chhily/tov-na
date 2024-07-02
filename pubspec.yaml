@@ -17,6 +17,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   google_fonts: 6.1.0
+  flutter_riverpod: ^2.5.1
+  riverpod_lint: ^2.3.7
 
 dev_dependencies:
   flutter_test:

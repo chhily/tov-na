@@ -41,3 +41,19 @@ class AppRadius {
   static BorderRadius largeRadius = BorderRadius.circular(large);
   static BorderRadius extraLargeRadius = BorderRadius.circular(extraLarge);
 }
+
+class AppSize {
+  AppSize._();
+
+  // Small size constants
+  static const SizedBox smallVerticalSpacing = SizedBox(height: 4);
+  static const SizedBox smallHorizontalSpacing = SizedBox(width: 4);
+
+  // Medium size constants
+  static const SizedBox mediumVerticalSpacing = SizedBox(height: 8);
+  static const SizedBox mediumHorizontalSpacing = SizedBox(width: 8);
+
+  // Large size constants
+  static const SizedBox largeVerticalSpacing = SizedBox(height: 12);
+  static const SizedBox largeHorizontalSpacing = SizedBox(width: 12);
+}

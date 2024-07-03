@@ -29,12 +29,7 @@ class DestinationNotifier extends StateNotifier<DestinationState> {
   DestinationNotifier()
       : super(
           DestinationState(
-            cambodianProvince: CambodianProvince(
-              name: "Select a place",
-              filters: [],
-              destinations: [],
-              description: "N/A",
-            ),
+            cambodianProvince: cambodianProvinces.first,
           ),
         );
 

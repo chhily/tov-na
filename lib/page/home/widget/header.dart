@@ -26,7 +26,7 @@ class HomeHeader extends ConsumerWidget {
             children: [
               const Icon(Icons.location_pin, size: 16),
               AppSize.smallHorizontalSpacing,
-              AppText.body(destinationLabel.name,
+              AppText.body("Cambodia, ${destinationLabel.name}",
                   decoration: TextDecoration.underline),
             ],
           ),
@@ -37,7 +37,7 @@ class HomeHeader extends ConsumerWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 border: Border.all(color: AppColors.primary)),
-            child: const AvatarWidget()),
+            child: const AvatarWidget(size: kToolbarHeight / 1.5)),
       ],
     );
   }

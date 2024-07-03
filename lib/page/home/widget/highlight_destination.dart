@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tov_na/core/constant/constants.dart';
+import 'package:tov_na/core/util/utils.dart';
 import 'package:tov_na/core/widget/network_image.dart';
 import 'package:tov_na/core/widget/widget.dart';
 import 'package:tov_na/model/destination/cambodia.dart';
+import 'package:tov_na/page/destination/destination.dart';
 
 class HighlightPlaceWidget extends StatelessWidget {
   final CambodianProvince placeValue;
@@ -10,35 +12,48 @@ class HighlightPlaceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: List.generate(
-              placeValue.destinations.length,
-              (index) {
-                final itemValue = placeValue.destinations.elementAt(index);
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _pictures(context: context, itemValue: itemValue),
-                    AppSize.mediumVerticalSpacing,
-                    _info(context: context, itemValue: itemValue),
-                  ],
-                );
-              },
-            ),
-          ),
-        )
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: List.generate(
+          placeValue.destinations.length,
+          (index) {
+            final itemValue = placeValue.destinations.elementAt(index);
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                InkWell(
+                  borderRadius: AppRadius.mediumRadius,
+                  onTap: () {
+                    Helper.openMaterialPage(context, const DestinationPage(),
+                        routeSetting: RouteSettings(arguments: itemValue));
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _pictures(context: context, itemValue: itemValue),
+                      AppSize.mediumVerticalSpacing,
+                      _info(context: context, itemValue: itemValue),
+                    ],
+                  ),
+                ),
+                AppSize.mediumHorizontalSpacing,
+              ],
+            );
+          },
+        ),
+      ),
     );
   }
 
-  Widget _pictures({required BuildContext context, Destination? itemValue}) {
-    return Container(
-      padding: const EdgeInsets.only(right: 8),
+  Widget _pictures(
+      {required BuildContext context, required Destination itemValue}) {
+    return SizedBox(
       width: context.mediaQueryWidth * 0.55,
       height: context.mediaQueryHeight * 0.25,
       child: Stack(
@@ -46,8 +61,11 @@ class HighlightPlaceWidget extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: AppRadius.mediumRadius,
-            child: NetworkImageHelper(
-                fit: BoxFit.cover, imgUrl: "${itemValue?.imageUrl}"),
+            child: Hero(
+              tag: itemValue.imageUrl,
+              child: NetworkImageHelper(
+                  fit: BoxFit.cover, imgUrl: itemValue.imageUrl),
+            ),
           ),
           const Positioned(
             top: 4,
@@ -64,14 +82,14 @@ class HighlightPlaceWidget extends StatelessWidget {
             child: ClipRRect(
               borderRadius: AppRadius.mediumRadius,
               child: Container(
-                width: context.mediaQueryWidth * 0.53,
+                width: context.mediaQueryWidth * 0.55,
                 height: context.mediaQueryHeight * 0.25,
                 alignment: Alignment.bottomLeft,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
                   Colors.black.withOpacity(0.1),
-                  Colors.black.withOpacity(0.7),
-                ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+                  Colors.black.withOpacity(0.6),
+                ], begin: Alignment.center, end: Alignment.bottomLeft)),
                 child: Padding(
                   padding: context.smallGap,
                   child: Row(
@@ -93,10 +111,8 @@ class HighlightPlaceWidget extends StatelessWidget {
 
   Widget _info(
       {required BuildContext context, required Destination itemValue}) {
-    return Container(
-      padding: const EdgeInsets.only(right: 8),
+    return SizedBox(
       width: context.mediaQueryWidth * 0.55,
-      height: context.mediaQueryHeight * 0.25,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,9 +126,10 @@ class HighlightPlaceWidget extends StatelessWidget {
           ),
           AppSize.smallVerticalSpacing,
           AppText.caption(
-            "Start from \$5 / day",
+            "Start from \$${itemValue.accommodationPrice} / day",
             maxLine: 3,
           ),
+          AppSize.smallVerticalSpacing,
         ],
       ),
     );

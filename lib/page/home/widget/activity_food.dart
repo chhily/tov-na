@@ -21,8 +21,8 @@ class FoodWidget extends StatelessWidget {
         AppSize.largeVerticalSpacing,
         StaggeredGrid.count(
           crossAxisCount: 3,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
+          mainAxisSpacing: 4,
+          crossAxisSpacing: 4,
           children: List.generate(
             activity.length,
             (index) {
@@ -37,7 +37,7 @@ class FoodWidget extends StatelessWidget {
             },
           ),
         ),
-        AppSize.mediumVerticalSpacing,
+        const AppSpace.y(y: 4),
         StaggeredGrid.count(
           crossAxisCount: 4,
           mainAxisSpacing: 4,
@@ -46,7 +46,7 @@ class FoodWidget extends StatelessWidget {
             food.length,
             (index) {
               final itemValue = food.elementAt(index);
-              if ((index.isEven) &&  index == (food.length - 1)) {
+              if ((index.isEven) && index == (food.length - 1)) {
                 return customGrid(4, 2, value: itemValue);
               }
               if (index.isOdd) {

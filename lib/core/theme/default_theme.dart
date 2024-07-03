@@ -40,7 +40,7 @@ class DefaultTheme {
           margin: EdgeInsets.zero,
           elevation: 0,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+              RoundedRectangleBorder(borderRadius: AppRadius.mediumRadius),
         ),
         navigationBarTheme: NavigationBarThemeData(
           height: 60,

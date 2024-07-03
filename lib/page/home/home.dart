@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tov_na/base/state_management/destination.dart';
 import 'package:tov_na/core/constant/constants.dart';
 import 'package:tov_na/core/widget/widget.dart';
-import 'package:tov_na/page/home/widget/activity_food.dart';
+
+import 'widget/accommodation.dart';
+import 'widget/activity_food.dart';
 import 'widget/choice_chips.dart';
 import 'widget/highlight_destination.dart';
 
@@ -36,6 +38,8 @@ class _HomePageState extends ConsumerState<HomePage> {
         HighlightPlaceWidget(placeValue: placeValue),
         AppSize.largeVerticalSpacing,
         FoodWidget(food: placeValue.food, activity: placeValue.activity),
+        AppSize.largeVerticalSpacing,
+        const AccommodationWidget(),
         AppSize.largeVerticalSpacing,
       ],
     );

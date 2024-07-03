@@ -5,4 +5,6 @@ class AppString {
   static const String activity = "Activity";
   static const String food = "Food";
   static const String accommodation = "Accommodation";
+  static const String seeMore = "more";
+  static const String seeLess = "less";
 }

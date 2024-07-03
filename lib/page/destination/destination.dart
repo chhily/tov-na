@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tov_na/core/constant/constants.dart';
 import 'package:tov_na/model/destination/cambodia.dart';
 import 'package:tov_na/page/destination/widget/app_bar.dart';
 

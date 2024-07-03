@@ -13,4 +13,5 @@ class AppColors {
   static const Color actionColors = Color(0xFFFF2424);
   static const Color error = Color(0xFFA32738);
   static const Color warning = Color(0xFFa3a039);
+  static const Color highlight = Color(0xFF007BFF);
 }

@@ -11,8 +11,6 @@ class AvatarWidget extends StatelessWidget {
     return CachedNetworkImage(
       imageUrl:
           "https://i.pinimg.com/564x/4b/12/d0/4b12d0489be1afaf835cca152ef186e0.jpg",
-      width: size ?? 50,
-      height: size ?? 50,
       imageBuilder: (context, imageProvider) {
         return CircleAvatar(
           radius: (size ?? 48) / 2,

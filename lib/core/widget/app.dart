@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tov_na/page/community/community.dart';
 
 import '../../page/home/home.dart';
 
@@ -6,7 +7,7 @@ class App {
   App._();
   static const List<Widget> page = [
     HomePage(title: "HOME"),
-    HomePage(title: "EXPLORE"),
+    CommunityPage(),
     HomePage(title: "NOTIFICATIONS"),
     HomePage(title: "PROFILE"),
   ];

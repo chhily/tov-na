@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:tov_na/page/community/community.dart';
+import 'package:tov_na/page/explore/explore.dart';
 
 import '../../page/home/home.dart';
 
 class App {
   App._();
   static const List<Widget> page = [
-    HomePage(title: "HOME"),
+    HomePage(),
+    ExplorePage(),
     CommunityPage(),
-    HomePage(title: "NOTIFICATIONS"),
-    HomePage(title: "PROFILE"),
+    HomePage(),
+    HomePage(),
   ];
 
   static const List<NavigationDestination> itemNav = [
@@ -23,6 +25,10 @@ class App {
       selectedIcon: Icon(
         Icons.explore_rounded,
       ),
+    ),
+    NavigationDestination(
+      icon: Icon(Icons.group),
+      label: "Community",
     ),
     NavigationDestination(
       icon: Icon(Icons.notifications_rounded),

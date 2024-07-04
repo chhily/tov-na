@@ -22,7 +22,7 @@ class DestinationState {
 }
 
 final destinationProvider =
-    StateNotifierProvider.autoDispose<DestinationNotifier, DestinationState>(
+    StateNotifierProvider<DestinationNotifier, DestinationState>(
         (ref) => DestinationNotifier());
 
 class DestinationNotifier extends StateNotifier<DestinationState> {

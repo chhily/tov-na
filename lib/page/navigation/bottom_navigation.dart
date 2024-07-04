@@ -18,14 +18,6 @@ class _BottomNavigationProviderState extends ConsumerState<NavRoot> {
   Widget build(BuildContext context) {
     final navIndex = ref.watch(navProvider);
     return Scaffold(
-      appBar: AppBar(
-        titleSpacing: 0,
-        flexibleSpace:  FlexibleSpaceBar(
-          title: const HomeHeader(),
-          titlePadding: context.regularGap,
-          centerTitle: false,
-        ),
-      ),
       body: SafeArea(child: App.page[navIndex.index]),
       bottomNavigationBar: NavigationBar(
         selectedIndex: navIndex.index,

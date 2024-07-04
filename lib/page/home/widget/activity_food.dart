@@ -27,8 +27,12 @@ class FoodWidget extends StatelessWidget {
             activity.length,
             (index) {
               final itemValue = activity.elementAt(index);
-              if (index == (activity.length - 1) && (!index.isOdd)) {
-                return activityGrid(3, 1, value: itemValue);
+              if ((index + 1) == activity.length) {
+                if ((index + 1).isEven) {
+                  return activityGrid(1, 1, value: itemValue);
+                } else {
+                  return activityGrid(3, 1, value: itemValue);
+                }
               }
               if (index.isEven) {
                 return activityGrid(2, 1, value: itemValue);
@@ -39,20 +43,24 @@ class FoodWidget extends StatelessWidget {
         ),
         const AppSpace.y(y: 4),
         StaggeredGrid.count(
-          crossAxisCount: 4,
+          crossAxisCount: 6,
           mainAxisSpacing: 4,
           crossAxisSpacing: 4,
           children: List.generate(
             food.length,
             (index) {
               final itemValue = food.elementAt(index);
-              if ((index.isEven) && index == (food.length - 1)) {
-                return customGrid(4, 2, value: itemValue);
+              if ((index + 1) == food.length) {
+                if ((index + 1).isOdd) {
+                  return customGrid(3, 4, value: itemValue);
+                } else {
+                  return customGrid(6, 3, value: itemValue);
+                }
               }
               if (index.isOdd) {
-                return customGrid(2, 1, value: itemValue);
+                return customGrid(3, 4, value: itemValue);
               } else {
-                return customGrid(2, 3, value: itemValue);
+                return customGrid(3, 2, value: itemValue);
               }
             },
           ),

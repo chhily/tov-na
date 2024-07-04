@@ -19,13 +19,17 @@ class AvatarWidget extends StatelessWidget {
         );
       },
       placeholder: (context, url) {
-        return const Center(
-          child: SizedBox(
-            height: 12,
-            width: 12,
-            child: CircularProgressIndicator.adaptive(
-              valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
-              strokeWidth: 1,
+        return SizedBox(
+          height: size ?? 48,
+          width: size ?? 48,
+          child: const Center(
+            child: SizedBox(
+              height: 12,
+              width: 12,
+              child: CircularProgressIndicator.adaptive(
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+                strokeWidth: 1,
+              ),
             ),
           ),
         );

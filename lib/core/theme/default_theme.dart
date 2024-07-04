@@ -15,81 +15,85 @@ class DefaultTheme {
   static const fontFamily = "NotoSansKhmer";
 
   ThemeData get theme => ThemeData(
-        textTheme: textTheme(),
-        drawerTheme: const DrawerThemeData(
-          backgroundColor: AppColors.bgColor,
-          surfaceTintColor: AppColors.primary,
+      textTheme: textTheme(),
+      drawerTheme: const DrawerThemeData(
+        backgroundColor: AppColors.bgColor,
+        surfaceTintColor: AppColors.primary,
+      ),
+      chipTheme: const ChipThemeData(
+        iconTheme: IconThemeData(
+          size: 12,
         ),
-        chipTheme: const ChipThemeData(
-          iconTheme: IconThemeData(
-            size: 12,
-          ),
+      ),
+      dialogTheme: DialogTheme(
+        backgroundColor: AppColors.bgColor,
+        titleTextStyle: GoogleFonts.notoSansKhmer(
+          fontSize: FontSize.title,
+          color: AppColors.primaryText,
+          fontWeight: FontWeight.bold,
         ),
-        dialogTheme: DialogTheme(
-          backgroundColor: AppColors.bgColor,
-          titleTextStyle: GoogleFonts.notoSansKhmer(
-            fontSize: FontSize.title,
-            color: AppColors.primaryText,
-            fontWeight: FontWeight.bold,
-          ),
+        elevation: 0,
+      ),
+      cardColor: AppColors.white,
+      cardTheme: CardTheme(
+        color: AppColors.white,
+        margin: EdgeInsets.zero,
+        elevation: 0,
+        shape: RoundedRectangleBorder(borderRadius: AppRadius.mediumRadius),
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        height: 60,
+        surfaceTintColor: AppColors.bg2Color,
+        elevation: 2,
+        backgroundColor: AppColors.bg2Color,
+        indicatorColor: AppColors.primary,
+        labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+        labelTextStyle: MaterialStateProperty.all(
+          appText.copyWith(fontSize: FontSize.caption),
+        ),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: AppColors.white,
+          type: BottomNavigationBarType.shifting,
           elevation: 0,
-        ),
-        cardColor: AppColors.white,
-        cardTheme: CardTheme(
-          color: AppColors.white,
-          margin: EdgeInsets.zero,
-          elevation: 0,
-          shape:
-              RoundedRectangleBorder(borderRadius: AppRadius.mediumRadius),
-        ),
-        navigationBarTheme: NavigationBarThemeData(
-          height: 60,
-          surfaceTintColor: AppColors.bg2Color,
-          elevation: 2,
-          backgroundColor: AppColors.bg2Color,
-          indicatorColor: AppColors.primary,
-          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-          labelTextStyle: MaterialStateProperty.all(
-            appText.copyWith(fontSize: FontSize.caption),
+          selectedIconTheme: const IconThemeData(
+            color: AppColors.primary,
           ),
+          unselectedIconTheme: const IconThemeData(
+            color: AppColors.secondary,
+          ),
+          selectedLabelStyle: appText,
+          showSelectedLabels: true,
+          unselectedLabelStyle: appText.copyWith(color: AppColors.subtitle)),
+      elevatedButtonTheme: elevatedButtonTheme,
+      outlinedButtonTheme: outlineButtonTheme,
+      textButtonTheme: textButtonTheme,
+      iconTheme: iconTheme,
+      scaffoldBackgroundColor: AppColors.bgColor,
+      appBarTheme: appBarTheme,
+      iconButtonTheme: iconButtonTheme,
+      useMaterial3: true,
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: AppColors.primary,
+      ),
+      scrollbarTheme: ScrollbarThemeData(
+        thumbColor: MaterialStateProperty.all(AppColors.subtitle),
+        thickness: MaterialStateProperty.all(4.0),
+      ),
+      colorScheme: colorScheme,
+      searchBarTheme: SearchBarThemeData(
+        elevation: MaterialStateProperty.all(0),
+        backgroundColor: MaterialStateProperty.all(
+          AppColors.subtitle.withOpacity(0.5),
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-            backgroundColor: AppColors.white,
-            type: BottomNavigationBarType.shifting,
-            elevation: 0,
-            selectedIconTheme: const IconThemeData(
-              color: AppColors.primary,
-            ),
-            unselectedIconTheme: const IconThemeData(
-              color: AppColors.secondary,
-            ),
-            selectedLabelStyle: appText,
-            showSelectedLabels: true,
-            unselectedLabelStyle: appText.copyWith(color: AppColors.subtitle)),
-        elevatedButtonTheme: elevatedButtonTheme,
-        outlinedButtonTheme: outlineButtonTheme,
-        textButtonTheme: textButtonTheme,
-        iconTheme: iconTheme,
-        scaffoldBackgroundColor: AppColors.bgColor,
-        appBarTheme: appBarTheme,
-        iconButtonTheme: iconButtonTheme,
-        useMaterial3: true,
-        floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: AppColors.primary,
-        ),
-        scrollbarTheme: ScrollbarThemeData(
-          thumbColor: MaterialStateProperty.all(AppColors.subtitle),
-          thickness: MaterialStateProperty.all(4.0),
-        ),
-        colorScheme: colorScheme,
-      );
+      ));
 
   ColorScheme get colorScheme {
     return ColorScheme.fromSwatch().copyWith(
-      primary: AppColors.primary,
-      secondary: AppColors.secondary,
-      background: AppColors.bgColor,
-    );
+        primary: AppColors.primary,
+        secondary: AppColors.secondary,
+        background: AppColors.bgColor,
+        brightness: Brightness.light);
   }
 
   TextTheme textTheme() {
@@ -111,7 +115,7 @@ class DefaultTheme {
         fontWeight: FontWeight.bold,
       ),
       systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
+        statusBarColor: AppColors.bgColor,
         statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.dark,
       ),

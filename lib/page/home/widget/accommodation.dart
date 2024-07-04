@@ -12,6 +12,7 @@ class AccommodationWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AppText.title(AppString.accommodation),
+
       ],
     );
   }

@@ -13,13 +13,17 @@ class NetworkImageHelper extends StatelessWidget {
       imageUrl: imgUrl,
       fit: fit,
       placeholder: (context, url) {
-        return const Center(
-          child: SizedBox(
-            height: 12,
-            width: 12,
-            child: CircularProgressIndicator.adaptive(
-              valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
-              strokeWidth: 1,
+        return SizedBox(
+          height: context.mediaQueryHeight * 0.3,
+          width: context.mediaQueryWidth * 0.3,
+          child: const Center(
+            child: SizedBox(
+              height: 12,
+              width: 12,
+              child: CircularProgressIndicator.adaptive(
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+                strokeWidth: 1,
+              ),
             ),
           ),
         );

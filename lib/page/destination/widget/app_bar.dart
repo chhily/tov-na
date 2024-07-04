@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../core/constant/app_color.dart';
 
@@ -25,6 +26,11 @@ class DestinationAppBar extends StatelessWidget {
           icon: const Icon(Icons.more_horiz_rounded, color: AppColors.primary),
         ),
       ],
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.dark,
+      ),
       elevation: 1,
       backgroundColor: AppColors.white,
       surfaceTintColor: AppColors.white,

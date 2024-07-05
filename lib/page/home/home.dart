@@ -25,7 +25,6 @@ class _HomePageState extends ConsumerState<HomePage> {
     return Padding(
       padding: context.mediumGap,
       child: CustomScrollView(
-        key: App.storageKeyHome,
         slivers: [
           SliverAppBar(
             stretch: true,
@@ -42,14 +41,12 @@ class _HomePageState extends ConsumerState<HomePage> {
           AppText.title(AppString.headLabel).toSliver,
           AppSize.largeVerticalSpacing.toSliver,
           ChoiceChipWidget(
-                  filters: placeValue.filters,
-                  onSelected: (bool selected, int index) {
-                    ref
-                        .read(destinationProvider.notifier)
-                        .onToggleSelection(index);
-                  },
-                  selectedIndices: selectedIndices)
-              .toSliver,
+            filters: placeValue.filters,
+            onSelected: (bool selected, int index) {
+              ref.read(destinationProvider.notifier).onToggleSelection(index);
+            },
+            selectedIndices: selectedIndices,
+          ).toSliver,
           AppSize.mediumVerticalSpacing.toSliver,
           HighlightPlaceWidget(placeValue: placeValue).toSliver,
           AppSize.largeVerticalSpacing.toSliver,

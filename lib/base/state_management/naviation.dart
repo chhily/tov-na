@@ -10,7 +10,7 @@ class NavState {
   }
 }
 
-final navProvider = StateNotifierProvider<NavNotifier, NavState>(
+final navProvider = StateNotifierProvider.autoDispose<NavNotifier, NavState>(
     (ref) => NavNotifier());
 
 class NavNotifier extends StateNotifier<NavState> {
@@ -19,6 +19,4 @@ class NavNotifier extends StateNotifier<NavState> {
   void onIndexChanged(int index) {
     state = state.copyWith(index: index);
   }
-
-
 }

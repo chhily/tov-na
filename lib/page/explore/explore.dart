@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tov_na/core/constant/constants.dart';
+import 'package:tov_na/core/widget/widget.dart';
 
 import 'widget/grid.dart';
 import 'widget/search_bar.dart';
@@ -14,13 +15,15 @@ class ExplorePage extends StatelessWidget {
       child: Padding(
         padding: context.mediumGap,
         child: NestedScrollView(
-            floatHeaderSlivers: true,
-            headerSliverBuilder: (context, innerBoxIsScrolled) {
-              return [const ExploreSearchBar(forceElevated: true)];
-            },
-            body: const GridWidget()),
+          floatHeaderSlivers: true,
+          headerSliverBuilder: (context, innerBoxIsScrolled) {
+            return [
+              const ExploreSearchBar(forceElevated: true),
+            ];
+          },
+          body: const GridWidget(),
+        ),
       ),
     );
   }
 }
-

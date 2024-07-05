@@ -3,14 +3,9 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'image_widget.dart';
 
-class GridWidget extends StatefulWidget {
+class GridWidget extends StatelessWidget {
   const GridWidget({super.key});
 
-  @override
-  State<GridWidget> createState() => _GridWidgetState();
-}
-
-class _GridWidgetState extends State<GridWidget> {
   @override
   Widget build(BuildContext context) {
     return GridView.custom(
@@ -21,11 +16,11 @@ class _GridWidgetState extends State<GridWidget> {
         crossAxisSpacing: 4,
         repeatPattern: QuiltedGridRepeatPattern.inverted,
         pattern: [
-         const QuiltedGridTile(4, 3),
-         const QuiltedGridTile(2, 2),
-         const QuiltedGridTile(2, 2),
-         const QuiltedGridTile(2, 2),
-         const QuiltedGridTile(2, 2),
+          const QuiltedGridTile(4, 3),
+          const QuiltedGridTile(2, 2),
+          const QuiltedGridTile(2, 2),
+          const QuiltedGridTile(2, 2),
+          const QuiltedGridTile(2, 2),
         ],
       ),
       childrenDelegate: SliverChildBuilderDelegate(

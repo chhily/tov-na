@@ -10,8 +10,8 @@ class App {
     HomePage(),
     ExplorePage(),
     CommunityPage(),
-    HomePage(),
-    HomePage(),
+    Placeholder(),
+    Placeholder(),
   ];
 
   static const List<NavigationDestination> itemNav = [
@@ -37,7 +37,7 @@ class App {
     NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
   ];
 
-  static const storageKeyHome = PageStorageKey('home_page');
-  static const storageKeyExplore = PageStorageKey('explore_page');
-  static const storageKeyCommunity = PageStorageKey('community_page');
+  static const String storageKeyHome = 'home_page';
+  static const String storageKeyExplore = 'explore_page';
+  static const String storageKeyCommunity = 'community_page';
 }

@@ -55,7 +55,7 @@ class HighlightPlaceWidget extends StatelessWidget {
       {required BuildContext context, required Destination itemValue}) {
     return SizedBox(
       width: context.mediaQueryWidth * 0.55,
-      height: context.mediaQueryHeight * 0.25,
+      height: context.mediaQueryHeight * 0.3,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -77,13 +77,11 @@ class HighlightPlaceWidget extends StatelessWidget {
                   Icon(Icons.favorite, color: AppColors.actionColors, size: 16),
             ),
           ),
-          Positioned(
+          Positioned.fill(
             bottom: 0,
             child: ClipRRect(
               borderRadius: AppRadius.mediumRadius,
               child: Container(
-                width: context.mediaQueryWidth * 0.55,
-                height: context.mediaQueryHeight * 0.25,
                 alignment: Alignment.bottomLeft,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [

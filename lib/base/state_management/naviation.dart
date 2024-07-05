@@ -10,7 +10,7 @@ class NavState {
   }
 }
 
-final navProvider = StateNotifierProvider.autoDispose<NavNotifier, NavState>(
+final navProvider = StateNotifierProvider<NavNotifier, NavState>(
     (ref) => NavNotifier());
 
 class NavNotifier extends StateNotifier<NavState> {

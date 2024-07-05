@@ -25,6 +25,7 @@ class _HomePageState extends ConsumerState<HomePage> {
     return Padding(
       padding: context.mediumGap,
       child: CustomScrollView(
+        key: App.storageKeyHome,
         slivers: [
           SliverAppBar(
             stretch: true,

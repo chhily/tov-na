@@ -36,4 +36,8 @@ class App {
     ),
     NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
   ];
+
+  static const storageKeyHome = PageStorageKey('home_page');
+  static const storageKeyExplore = PageStorageKey('explore_page');
+  static const storageKeyCommunity = PageStorageKey('community_page');
 }

@@ -16,16 +16,16 @@ class _GridWidgetState extends State<GridWidget> {
     return GridView.custom(
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverQuiltedGridDelegate(
-        crossAxisCount: 4,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
+        crossAxisCount: 7,
+        mainAxisSpacing: 4,
+        crossAxisSpacing: 4,
         repeatPattern: QuiltedGridRepeatPattern.inverted,
         pattern: [
-         const QuiltedGridTile(3, 2),
-         const QuiltedGridTile(1, 1),
-         const QuiltedGridTile(1, 1),
-         const QuiltedGridTile(1, 1),
-         const QuiltedGridTile(1, 1),
+         const QuiltedGridTile(4, 3),
+         const QuiltedGridTile(2, 2),
+         const QuiltedGridTile(2, 2),
+         const QuiltedGridTile(2, 2),
+         const QuiltedGridTile(2, 2),
         ],
       ),
       childrenDelegate: SliverChildBuilderDelegate(

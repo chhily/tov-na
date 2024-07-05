@@ -6,19 +6,18 @@ import 'package:tov_na/page/home/widget/header.dart';
 
 import '../../base/state_management/naviation.dart';
 
-class NavRoot extends ConsumerStatefulWidget {
+class NavRoot extends ConsumerWidget {
   const NavRoot({super.key});
 
   @override
-  ConsumerState createState() => _BottomNavigationProviderState();
-}
-
-class _BottomNavigationProviderState extends ConsumerState<NavRoot> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final navIndex = ref.watch(navProvider);
     return Scaffold(
-      body: SafeArea(child: App.page[navIndex.index]),
+      body: SafeArea(
+          child: PageStorage(
+        bucket: PageStorageBucket(),
+        child: App.page[navIndex.index],
+      )),
       bottomNavigationBar: NavigationBar(
         selectedIndex: navIndex.index,
         onDestinationSelected: (index) {
